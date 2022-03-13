@@ -65,6 +65,8 @@ export default function Login() {
 
   const [message,setMessage] = useState()
 
+  const [userType, setUserType] = useState();
+
   const handleInputChange = (event) => {
     setState((prevProps) => ({
       ...prevProps,
@@ -77,18 +79,21 @@ export default function Login() {
     console.log(state);
     axios.post('https://anubhavg-bits.herokuapp.com/api/auth/login',state).then(res=>{   
         setMessage(res.data.message)
+        setUserType(res.data.user_type);
         setIsOpened(true)
         setErrorMessage(false)
         // console.log(res.data.message);
         // console.log(res.data['auth-token']);
         localStorage.removeItem('bits-user-auth-token');
         localStorage.setItem('bits-user-auth-token', res.data['auth-token'])
+        localStorage.setItem('bits-user-type', res.data.user_type)
     }).catch(err=>{
         // console.log(err.response.data);
         setIsOpened(true)
         setMessage(err.response.data.message)
         setErrorMessage(true)
         localStorage.removeItem('bits-user-auth-token');
+        localStorage.removeItem('bits-user-type');
     });
   };
 
@@ -102,7 +107,8 @@ export default function Login() {
       <div className={classes.paper}>
       {isOpened && <Button variant="contained" color="secondary" style={{marginTop:"0px",marginLeft:10,width: "570px",
   height: "100px",color: '#FFFFFF',fontSize:'19px'}}><b>{message}</b></Button> }
-      {/* {!ifError && <Redirect to="/profile"/>} */}
+      {!ifError && userType=="Borrower" && <Redirect to="/borrowerprofile"/>}
+      {!ifError && userType=="Investor" && <Redirect to="/investorprofile"/>}
         <Avatar className={classes.avatar}>
           <LockOutlinedIcon />
         </Avatar>

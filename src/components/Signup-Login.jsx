@@ -10,7 +10,8 @@ import {BrowserRouter as Router,Route,Redirect,Switch} from "react-router-dom";
 export default function SignupLogin(){
     return (
         <div>
-            {/* {localStorage.getItem('bits-user-auth-token') && <Redirect to="/profile"/>} */}
+            {localStorage.getItem('bits-user-auth-token') && localStorage.getItem('bits-user-type')=="Borrower" && <Redirect to="/borrowerprofile"/>}
+            {localStorage.getItem('bits-user-auth-token') && localStorage.getItem('bits-user-type')=="Investor" && <Redirect to="/investorprofile"/>}
             <Navbar/>
             <Link to="/" style={{ textDecoration: 'none' }}><Button variant="contained" color="primary" style={{marginTop:"10px",marginLeft:10,width: "170px",
   height: "50px",color: '#FFFFFF',fontSize:'19px'}}><b>Home</b></Button></Link>
