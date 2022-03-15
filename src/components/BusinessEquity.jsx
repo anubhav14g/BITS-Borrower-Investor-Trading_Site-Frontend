@@ -13,7 +13,7 @@ export default function Profile(){
     return(
     <div>
         <Navbar/>
-        <Link to="/businessequity" style={{ textDecoration: 'none'}}><Button variant="contained" color="primary" style={{marginTop:"10px",marginLeft:"20px",width: "300px",
+        <Link to="/createbusinessequityapplication" style={{ textDecoration: 'none'}}><Button variant="contained" color="primary" style={{marginTop:"10px",marginLeft:"20px",width: "300px",
         height: "50px",color: '#FFFFFF',fontSize:'19px'}}><b>Create Application</b></Button></Link>
         <Link to="/viewclosedapplications" style={{ textDecoration: 'none'}}><Button variant="contained" color="primary" style={{marginTop:"10px",marginLeft:"10px",width: "350px",
         height: "50px",color: '#FFFFFF',fontSize:'19px'}}><b>View Closed Applications</b></Button></Link>
