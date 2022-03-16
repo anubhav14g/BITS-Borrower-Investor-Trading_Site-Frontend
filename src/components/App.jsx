@@ -9,6 +9,8 @@ import ViewOpenApplications from "./ViewOpenApplications.jsx";
 import ClosedDetailedView from "./ClosedDetailedView.jsx";
 import OpenDetailedView from "./OpenDetailedView.jsx";
 import CreateBusinessEquityApplication from "./CreateBusinessEquityApplication.jsx";
+import ViewBusinessEquityApplications from "./ViewBusinessEquityApplications.jsx";
+import InvestorOpenDetailedView from "./InvestorOpenDetailedView.jsx";
 import {BrowserRouter as Router,Route,Switch} from "react-router-dom";
 
 function App(){
@@ -26,6 +28,8 @@ function App(){
                     <Route path="/closeddetailedview/:application_id" component={ClosedDetailedView}/>
                     <Route path="/opendetailedview/:application_id" component={OpenDetailedView}/>
                     <Route path="/createbusinessequityapplication" component={CreateBusinessEquityApplication}/>
+                    <Route path="/viewbusinessequityapplications" component={ViewBusinessEquityApplications}/>
+                    <Route path="/investoropendetailedview/:application_id" component={InvestorOpenDetailedView}/>
                 </Switch>
             </div>
         </Router>
