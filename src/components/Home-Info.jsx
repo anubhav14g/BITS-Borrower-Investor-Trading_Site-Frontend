@@ -52,8 +52,8 @@ export default function HomeInfo() {
           <h1 style={{fontSize: "100px", marginBottom: "0px",marginLeft:"100px",marginTop: "10px"}}>{date.toLocaleTimeString()}</h1>
           <Link to="/signuplogin" style={{ textDecoration: 'none' }}><Button variant="contained" color="primary" style={{marginTop:"100px",marginLeft:100,width: "170px",
   height: "50px",color: '#FFFFFF',fontSize:'19px'}}><b>Signup/Login</b></Button></Link>
-          <Button onClick={handleClickOpen} variant="contained" color="primary" style={{marginTop:"100px",marginLeft:50,width: "200px",
-  height: "50px",color: '#FFFFFF',fontSize:'19px'}}><b>Investor's Tip</b></Button>
+          <Link to="/investortip" style={{ textDecoration: 'none' }}><Button variant="contained" color="primary" style={{marginTop:"100px",marginLeft:50,width: "200px",
+  height: "50px",color: '#FFFFFF',fontSize:'19px'}}><b>Investor's Tip</b></Button></Link>
   <div>
       <Dialog
         fullScreen={fullScreen}
