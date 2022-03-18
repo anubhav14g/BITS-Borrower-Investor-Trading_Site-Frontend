@@ -38,8 +38,8 @@ export default function Profile(){
         height: "100px",color: '#FFFFFF',fontSize:'19px'}}><b>View Business Loan Applications</b></Button>
         <Button onClick={handleClickOpen} variant="contained" color="primary" style={{marginTop:"10px",marginLeft:"10px",width: "260px",
         height: "100px",color: '#FFFFFF',fontSize:'19px'}}><b>View Personal Loan Applications</b></Button>
-        <Button onClick={handleClickOpen} variant="contained" color="primary" style={{marginTop:"10px",marginLeft:"10px",width: "260px",
-        height: "100px",color: '#FFFFFF',fontSize:'19px'}}><b>Create Investor Tip</b></Button>
+        <Link to="/createinvestortip" style={{ textDecoration: 'none'}}><Button variant="contained" color="primary" style={{marginTop:"10px",marginLeft:"10px",width: "260px",
+        height: "100px",color: '#FFFFFF',fontSize:'19px'}}><b>Create Investor Tip</b></Button></Link>
         <Link to="/" style={{ textDecoration: 'none'}}><Button onClick={logout} variant="contained" color="primary" style={{marginTop:"-100px",marginLeft:"1150px",width: "170px",
   height: "50px",color: '#FFFFFF',fontSize:'19px'}}><b>Log Out</b></Button></Link>
         <h1 style={{color: 'blue'}} className="blink_me">Click on Buttons to display data or to view changes</h1>

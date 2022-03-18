@@ -24,11 +24,11 @@ export default function ProfileTable(props) {
   
   const classes = useStyles();
 
-  const [row, setData]= useState();
+  const [rowsData, setData]= useState();
   
   function callGetAPI(){
-    axios.get(`https://anubhavg-bits.herokuapp.com/api/investor_tip/get/all/comments/tip/${tip_id}`).then(res=>{    
-      setData(res.data['data'])
+    axios.get(`https://anubhavg-bits.herokuapp.com/api/investor_tip/get/all/comments/tip/${tip_id}`).then(res=>{     
+    setData(res.data['data'])
     }).catch(err=>{
         console.log(err);
     });
@@ -38,24 +38,29 @@ export default function ProfileTable(props) {
     <div>
         <Navbar/>
         {callGetAPI()}
-        {!row && <div style={{marginLeft: '40rem',marginTop: '10rem'}}><CircularProgress/></div>}
-        {row && <TableContainer component={Paper} style={{marginTop: "20px"}}>
+        {!rowsData && <div style={{marginLeft: '40rem',marginTop: '10rem'}}><CircularProgress/></div>}
+        {rowsData  && rowsData.map((row) => (
+          <TableContainer component={Paper} style={{marginTop: "20px"}}>
       <Table className={classes.table} aria-label="simple table">
         <TableHead>
           <TableRow>
+            <TableCell align="center"><h2>Name</h2></TableCell>
+            <TableCell align="center"><h2>Email</h2></TableCell>
             <TableCell align="center"><h2>Comment</h2></TableCell>
             <TableCell align="center"><h2>Created At</h2></TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
             <TableRow>
+              <TableCell align="center">{row.name}</TableCell>
+              <TableCell align="center">{row.email}</TableCell>
               <TableCell align="center">{row.comment}</TableCell>
               <TableCell align="center">{row.createdAt}</TableCell>
             </TableRow>
         </TableBody>
       </Table>
     </TableContainer>
-    }
+    ))}
     </div>
   );
 }
