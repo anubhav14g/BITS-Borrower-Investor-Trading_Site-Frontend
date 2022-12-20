@@ -76,7 +76,7 @@ export default function CreateTest(){
         event.preventDefault();
         console.log(state);
         
-        axios.post('https://anubhavg-bits.herokuapp.com/api/investor_tip/create/tip',state,{ headers: {"auth-token" : `${localStorage.getItem('bits-user-auth-token')}`}}).then(res=>{      
+        axios.post('https://anubhavg-bits.onrender.com/api/investor_tip/create/tip',state,{ headers: {"auth-token" : `${localStorage.getItem('bits-user-auth-token')}`}}).then(res=>{      
           
             setMessage(res.data['message'])
             setIsOpened(true)

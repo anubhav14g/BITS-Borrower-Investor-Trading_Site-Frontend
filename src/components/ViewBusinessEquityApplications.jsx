@@ -43,7 +43,7 @@ export default function ProfileTable() {
 
   const handleSubmit = (event,application_id) => {
       event.preventDefault();
-      axios.post(`https://anubhavg-bits.herokuapp.com/api/investor/business/equity/counter/offer/${application_id}`,state,{ headers: {"auth-token" : `${localStorage.getItem('bits-user-auth-token')}`}}).then(res=>{      
+      axios.post(`https://anubhavg-bits.onrender.com/api/investor/business/equity/counter/offer/${application_id}`,state,{ headers: {"auth-token" : `${localStorage.getItem('bits-user-auth-token')}`}}).then(res=>{      
       setMessage(res.data['message'])
       setIsOpened(true)
       }).catch(err=>{
@@ -53,7 +53,7 @@ export default function ProfileTable() {
   };
   
   function callGetAPI(){
-    axios.get('https://anubhavg-bits.herokuapp.com/api/investor/view/business/equity/applications',{ headers: {"auth-token" : `${localStorage.getItem('bits-user-auth-token')}`}}).then(res=>{       
+    axios.get('https://anubhavg-bits.onrender.com/api/investor/view/business/equity/applications',{ headers: {"auth-token" : `${localStorage.getItem('bits-user-auth-token')}`}}).then(res=>{       
       setData(res.data['data'])
     }).catch(err=>{
         console.log(err);
@@ -61,7 +61,7 @@ export default function ProfileTable() {
   }
 
   function callGetAPI2(application_id){
-    axios.get(`https://anubhavg-bits.herokuapp.com/api/investor/business/equity/accept/offer/${application_id}`,{ headers: {"auth-token" : `${localStorage.getItem('bits-user-auth-token')}`}}).then(res=>{      
+    axios.get(`https://anubhavg-bits.onrender.com/api/investor/business/equity/accept/offer/${application_id}`,{ headers: {"auth-token" : `${localStorage.getItem('bits-user-auth-token')}`}}).then(res=>{      
       setMessage(res.data['message'])
       setIsOpened(true)
     }).catch(err=>{
@@ -71,7 +71,7 @@ export default function ProfileTable() {
   }
 
   function callGetAPI3(application_id){
-    axios.get(`https://anubhavg-bits.herokuapp.com/api/investor/business/equity/reject/offer/${application_id}`,{ headers: {"auth-token" : `${localStorage.getItem('bits-user-auth-token')}`}}).then(res=>{      
+    axios.get(`https://anubhavg-bits.onrender.com/api/investor/business/equity/reject/offer/${application_id}`,{ headers: {"auth-token" : `${localStorage.getItem('bits-user-auth-token')}`}}).then(res=>{      
       setMessage(res.data['message'])
       setIsOpened(true)
     }).catch(err=>{

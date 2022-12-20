@@ -76,7 +76,7 @@ export default function SignUp() {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(state);
-    axios.post('https://anubhavg-bits.herokuapp.com/api/auth/register',state).then(res=>{   
+    axios.post('https://anubhavg-bits.onrender.com/api/auth/register',state).then(res=>{   
         setMessage(res.data.message)
         setIsOpened(true)
         localStorage.removeItem('bits-user-auth-token');

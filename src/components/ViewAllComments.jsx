@@ -27,7 +27,7 @@ export default function ProfileTable(props) {
   const [rowsData, setData]= useState();
   
   function callGetAPI(){
-    axios.get(`https://anubhavg-bits.herokuapp.com/api/investor_tip/get/all/comments/tip/${tip_id}`).then(res=>{     
+    axios.get(`https://anubhavg-bits.onrender.com/api/investor_tip/get/all/comments/tip/${tip_id}`).then(res=>{     
     setData(res.data['data'])
     }).catch(err=>{
         console.log(err);

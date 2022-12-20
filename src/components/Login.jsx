@@ -77,7 +77,7 @@ export default function Login() {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(state);
-    axios.post('https://anubhavg-bits.herokuapp.com/api/auth/login',state).then(res=>{   
+    axios.post('https://anubhavg-bits.onrender.com/api/auth/login',state).then(res=>{   
         setMessage(res.data.message)
         setUserType(res.data.user_type);
         setIsOpened(true)

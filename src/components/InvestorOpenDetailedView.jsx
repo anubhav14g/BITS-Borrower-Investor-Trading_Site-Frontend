@@ -27,7 +27,7 @@ export default function ProfileTable(props) {
   const [row, setData]= useState();
   
   function callGetAPI(){
-    axios.get(`https://anubhavg-bits.herokuapp.com/api/investor/view/detailed/business/equity/application/${application_id}`,{ headers: {"auth-token" : `${localStorage.getItem('bits-user-auth-token')}`}}).then(res=>{    
+    axios.get(`https://anubhavg-bits.onrender.com/api/investor/view/detailed/business/equity/application/${application_id}`,{ headers: {"auth-token" : `${localStorage.getItem('bits-user-auth-token')}`}}).then(res=>{    
       setData(res.data['data'])
     }).catch(err=>{
         console.log(err);

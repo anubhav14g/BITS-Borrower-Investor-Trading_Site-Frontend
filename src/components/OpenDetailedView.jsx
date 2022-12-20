@@ -44,7 +44,7 @@ export default function ProfileTable(props) {
 
   const handleSubmit = (event,investor_id) => {
       event.preventDefault();
-      axios.post(`https://anubhavg-bits.herokuapp.com/api/business_equity/open/application/counter/offer/${application_id}/${investor_id}`,state,{ headers: {"auth-token" : `${localStorage.getItem('bits-user-auth-token')}`}}).then(res=>{      
+      axios.post(`https://anubhavg-bits.onrender.com/api/business_equity/open/application/counter/offer/${application_id}/${investor_id}`,state,{ headers: {"auth-token" : `${localStorage.getItem('bits-user-auth-token')}`}}).then(res=>{      
       setMessage(res.data['message'])
       setIsOpened(true)
       }).catch(err=>{
@@ -54,7 +54,7 @@ export default function ProfileTable(props) {
   };
   
   function callGetAPI(){
-    axios.get(`https://anubhavg-bits.herokuapp.com/api/business_equity/view/open/application/detailed/view/${application_id}`,{ headers: {"auth-token" : `${localStorage.getItem('bits-user-auth-token')}`}}).then(res=>{   
+    axios.get(`https://anubhavg-bits.onrender.com/api/business_equity/view/open/application/detailed/view/${application_id}`,{ headers: {"auth-token" : `${localStorage.getItem('bits-user-auth-token')}`}}).then(res=>{   
       // console.log(res.data['all_tests'])    
       setData(res.data['data'])
     }).catch(err=>{
@@ -63,7 +63,7 @@ export default function ProfileTable(props) {
   }
 
   function callGetAPI2(investor_id){
-    axios.get(`https://anubhavg-bits.herokuapp.com/api/business_equity/open/application/accept/offer/${application_id}/${investor_id}`,{ headers: {"auth-token" : `${localStorage.getItem('bits-user-auth-token')}`}}).then(res=>{      
+    axios.get(`https://anubhavg-bits.onrender.com/api/business_equity/open/application/accept/offer/${application_id}/${investor_id}`,{ headers: {"auth-token" : `${localStorage.getItem('bits-user-auth-token')}`}}).then(res=>{      
       setMessage(res.data['message'])
       setIsOpened(true)
     }).catch(err=>{
@@ -73,7 +73,7 @@ export default function ProfileTable(props) {
   }
 
   function callGetAPI3(investor_id){
-    axios.get(`https://anubhavg-bits.herokuapp.com/api/business_equity/open/application/reject/offer/${application_id}/${investor_id}`,{ headers: {"auth-token" : `${localStorage.getItem('bits-user-auth-token')}`}}).then(res=>{      
+    axios.get(`https://anubhavg-bits.onrender.com/api/business_equity/open/application/reject/offer/${application_id}/${investor_id}`,{ headers: {"auth-token" : `${localStorage.getItem('bits-user-auth-token')}`}}).then(res=>{      
       setMessage(res.data['message'])
       setIsOpened(true)
     }).catch(err=>{

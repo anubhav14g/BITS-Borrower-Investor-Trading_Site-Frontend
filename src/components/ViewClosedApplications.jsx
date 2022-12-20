@@ -28,7 +28,7 @@ export default function ProfileTable() {
   const [isOpened, setIsOpened] = useState(false);
   
   function callGetAPI(){
-    axios.get('https://anubhavg-bits.herokuapp.com/api/business_equity/view/closed/applications',{ headers: {"auth-token" : `${localStorage.getItem('bits-user-auth-token')}`}}).then(res=>{    
+    axios.get('https://anubhavg-bits.onrender.com/api/business_equity/view/closed/applications',{ headers: {"auth-token" : `${localStorage.getItem('bits-user-auth-token')}`}}).then(res=>{    
       setData(res.data['data'])
     }).catch(err=>{
         console.log(err);
@@ -36,7 +36,7 @@ export default function ProfileTable() {
   }
 
   function callGetAPI2(application_id){
-    axios.get(`https://anubhavg-bits.herokuapp.com/api/business_equity/reopen/closed/application/${application_id}`,{ headers: {"auth-token" : `${localStorage.getItem('bits-user-auth-token')}`}}).then(res=>{      
+    axios.get(`https://anubhavg-bits.onrender.com/api/business_equity/reopen/closed/application/${application_id}`,{ headers: {"auth-token" : `${localStorage.getItem('bits-user-auth-token')}`}}).then(res=>{      
       setMessage(res.data['message'])
       setIsOpened(true)
     }).catch(err=>{
